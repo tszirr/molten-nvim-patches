@@ -234,7 +234,7 @@ class MoltenKernel:
 
                 output.end_time = datetime.now()
 
-        if did_stuff or (self.options.output_show_exec_time and starting_status != OutputStatus.DONE):
+        if did_stuff or (self.options.output_show_exec_time and starting_status == OutputStatus.RUNNING):
             self.update_interface()
 
         if not was_ready and self.runtime.is_ready():
